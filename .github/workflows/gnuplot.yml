@@ -1,0 +1,31 @@
+name: Generate Gnuplot Graph
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Gnuplot
+      run: sudo apt-get install -y gnuplot
+
+    - name: Run Gnuplot script
+      run: gnuplot plot_script.plt
+
+    - name: Commit generated graph
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add sine_wave.png
+        git commit -m 'Add generated graph'
+        git push
