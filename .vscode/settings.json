@@ -48,6 +48,10 @@
         "typeinfo": "cpp",
         "complex": "cpp",
         "chrono": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "cstring": "cpp",
+        "list": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp"
     }
 }
