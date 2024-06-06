@@ -15,7 +15,7 @@ int main(void)
     s[2] = 1.7;
 
     // evolucion temporal
-    euler(s, 0.0, 80.9876, 0.005);
+    euler(s, 1.0, 80.9876, 0.005);
   
     return 0;
 }
@@ -34,7 +34,7 @@ void euler(std::vector<double> & s, double t0, double tf, double h)
 {
     std::vector <double> dsdt(s.size());
 
-    for(int t = t0; t <= tf; t = t + h){
+    for(double t = t0; t <= tf; t = t + h){
         f(s, dsdt, t);
 
         print(s, dsdt, t);
