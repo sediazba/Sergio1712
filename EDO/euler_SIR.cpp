@@ -1,13 +1,9 @@
 #include <iostream>
 #include <vector>
 
-void f(const std::vector<double> & s,
-       std::vector<double> & dsdt, 
-       double t);
+void f(const std::vector<double> & s, std::vector<double> & dsdt, double t);
 void euler(std::vector<double> & s, double t0, double tf, double h);
-void print(const std::vector<double> & s,
-	   const std::vector<double> & dsdt,
-	   double t);
+void print(const std::vector<double> & s, const std::vector<double> & dsdt, double t);
 
 int main(void)
 {
@@ -26,9 +22,7 @@ int main(void)
 }
 
 
-void f(const std::vector<double> & s,
-       std::vector<double> & dsdt, 
-       double t)
+void f(const std::vector<double> & s, std::vector<double> & dsdt, double t)
 {
   const double b = 1.0/2.0;
   const double k = 1.0/3.0;
@@ -53,9 +47,7 @@ void euler(std::vector<double> & s, double t0, double tf, double h)
   }
 }
 
-void print(const std::vector<double> & s,
-	   const std::vector<double> & dsdt,
-	   double t)
+void print(const std::vector<double> & s, const std::vector<double> & dsdt,double t)
 {
   std::cout << t << "\t" 
 	    << s[0] << "\t" 
