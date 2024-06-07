@@ -11,9 +11,9 @@ int main(void)
     //Condiciones Inciales
     double y = 1.5;
     
-    euler(y, 0.0, 10.0, 0.1);
+    //euler(y, 0.0, 10.0, 0.1);
 
-    std::cout << "\n";
+    //std::cout << "\n";
 
     rk4(y, 0.0, 10.0, 0.1);
 
