@@ -52,6 +52,7 @@
         "cstring": "cpp",
         "list": "cpp",
         "cfenv": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "valarray": "cpp"
     }
 }
