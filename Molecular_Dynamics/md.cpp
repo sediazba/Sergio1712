@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
 
   // parametros
   std::map<std::string, double> PARAMS;
-  PARAMS["G"] = 9.81;
-  PARAMS["B"] = 1.81;
-  PARAMS["DT"] = 0.01;
+  PARAMS["G"] = 9.81; //Gravedad
+  PARAMS["B"] = 1.81; //amortiguamiento
+  PARAMS["DT"] = 0.01; //delta t
   PARAMS["T0"] = 0.0;
   PARAMS["TF"] = 2.3456;
   PARAMS["NSTEPS"] = int((PARAMS["TF"]-PARAMS["T0"])/PARAMS["DT"]);
@@ -44,8 +44,6 @@ int main(int argc, char *argv[]) {
 	  time_step(particles, PARAMS);
 	  print(particles, PARAMS, PARAMS["T0"] + istep*PARAMS["DT"]);
   }
-
-
   return 0;
 }
 
@@ -72,8 +70,7 @@ void compute_forces(std::vector<Particle> &particles, std::map<std::string, doub
 	}
 }
 
-void start_time_integration(std::vector<Particle> &particles,
-                            std::map<std::string, double> &params) {
+void start_time_integration(std::vector<Particle> &particles, std::map<std::string, double> &params) {
 	for (auto & body : particles) {
 		body.Vz = body.Vz - 0.5*params["DT"]*body.Fz/body.mass;
 	}
