@@ -72,16 +72,14 @@ void compute_forces(std::vector<Particle> &particles, std::map<std::string, doub
 	}
 }
 
-void start_time_integration(std::vector<Particle> &particles,
-                            std::map<std::string, double> &params) {
+void start_time_integration(std::vector<Particle> &particles, std::map<std::string, double> &params) {
 	for (auto & body : particles) {
-		body.Vz = body.Vz - 0.5*params["DT"]*body.Fz/body.mass;
+	  body.Vz = body.Vz - 0.5*params["DT"]*body.Fz/body.mass;  // v = v_0 - 0.5*dt*aceleration
 	}
 }
 
 
-void time_step(std::vector<Particle> &particles,
-               std::map<std::string, double> &params) {
+void time_step(std::vector<Particle> &particles, std::map<std::string, double> &params) {
 	// leap-frog
 	for (auto & body : particles) {
 		body.Vz = body.Vz + params["DT"]*body.Fz/body.mass;
@@ -91,10 +89,10 @@ void time_step(std::vector<Particle> &particles,
 
 
 void print(const std::vector<Particle> &particles,
-           std::map<std::string, double> &params, double time) {
+        std::map<std::string, double> &params, double time) {
 	std::cout << time << " ";
 	for (const auto & body : particles) {
-		std::cout << body.mass << " " << body.Rz << " " << body.Vz << " " << body.Fz << " ";
-    }
+	  std::cout << body.mass << "\t" << body.Rz << "\t" << body.Vz << "\t" << body.Fz << "\t";
+	}
 	std::cout << "\n";
 }
