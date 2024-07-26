@@ -13,7 +13,7 @@ public: //visibilidad de todo lo que está debajo, se le puede meter la mano a l
   ~Particle(){}; //destructor
 };
 
-void initial_conditions(std::vector<Particle> & particles);
+void initial_conditions(std::vector<Particle> & particles); //El tipo de dato es Particle porque cada componente del vector tiene Rz, Vz, Fz y mass
 void compute_forces(std::vector<Particle> & particles, std::map<std::string, double> &params);
 void start_time_integration(std::vector<Particle> & particles, std::map<std::string, double> &params);
 void time_step(std::vector<Particle> & particles, std::map<std::string, double> &params);
@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
 
   // parametros
   std::map<std::string, double> PARAMS;
-  PARAMS["G"] = 9.81; //Gravedad
-  PARAMS["B"] = 1.81; //amortiguamiento
-  PARAMS["DT"] = 0.01; //delta t
+  PARAMS["G"] = 9.81;
+  PARAMS["B"] = 1.81;
+  PARAMS["DT"] = 0.01;
   PARAMS["T0"] = 0.0;
   PARAMS["TF"] = 2.3456;
   PARAMS["NSTEPS"] = int((PARAMS["TF"]-PARAMS["T0"])/PARAMS["DT"]);
@@ -50,8 +50,8 @@ int main(int argc, char *argv[]) {
 void initial_conditions(std::vector<Particle> & particles) {
   // condiciones iniciales
   particles[0].mass = 1.987;
-  particles[0].Rz = 1.21323432;
-  particles[0].Vz = +3.21323432;
+  particles[0].Rz = 1.21;
+  particles[0].Vz = 3.21;
 }
 
 
