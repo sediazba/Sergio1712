@@ -1,0 +1,116 @@
+
+
+*******************************************************************************
+Fri Jul 26 08:43:03 2024
+
+
+FIT:    data read from 'datos.txt'
+        format = z
+        #datapoints = 235
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri Jul 26 08:43:24 2024
+
+
+FIT:    data read from 'datos.txt'
+        format = z
+        #datapoints = 235
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = mx + b
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri Jul 26 08:43:38 2024
+
+
+FIT:    data read from 'datos.txt'
+        format = z
+        #datapoints = 235
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 1.1601691500e+02   0.00e+00  1.19e+00    1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul 26 08:45:13 2024
+
+
+FIT:    data read from 'datos.txt'
+        format = z
+        #datapoints = 235
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.2219297000e+02   0.00e+00  6.44e-01    1.000000e-01   9.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul 26 08:49:46 2024
+
+
+FIT:    data read from 'datos.txt' u 1:4
+        format = x:z
+        #datapoints = 235
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 3.5366681277e+04   0.00e+00  1.41e+00    3.710530e-15   1.988987e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul 26 08:51:59 2024
+
+
+FIT:    data read from 'datos.txt' u 1:4
+        format = x:z
+        #datapoints = 235
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 3.1093949288e+04   0.00e+00  6.44e-01    1.000000e-01   9.000000e-01
+   5 1.7114813171e-07  -2.41e-07  6.44e-01   -9.810017e+00   3.160955e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.71148e-07
+rel. change during last iteration : -2.41301e-12
+
+degrees of freedom    (FIT_NDF)                        : 233
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.71024e-05
+variance of residuals (reduced chisquare) = WSSR/ndf   : 7.34541e-10
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = -9.81002         +/- 2.606e-06    (2.657e-05%)
+b               = 3.16095          +/- 3.525e-06    (0.0001115%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -0.865  1.000 
