@@ -53,6 +53,7 @@
         "list": "cpp",
         "cfenv": "cpp",
         "cinttypes": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "map": "cpp"
     }
 }
