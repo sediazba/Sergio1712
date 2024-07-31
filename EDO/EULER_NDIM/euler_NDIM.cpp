@@ -9,7 +9,7 @@ void print(const std::vector<double> & s, const std::vector<double> & dsdt, doub
 int main(void)
 {
     // condiciones iniciales
-    std::vector<double> s(3);
+    std::vector<double> s(3); //vector de estado state
     s[0] = 1.0 + 1.0e-6;
     s[1] = 1.2;
     s[2] = 1.7;
