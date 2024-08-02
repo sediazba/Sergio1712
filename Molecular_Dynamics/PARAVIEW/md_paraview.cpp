@@ -126,7 +126,7 @@ void print_paraview(const std::vector<Particle> &particles,
   // creates a file per time step
   
   // set the filename: datos-{istep}.txt
-  std::string fname = "DISPLAY/datos-" + std::to_string(iter) + ".txt";  
+  std::string fname = "DISPLAY/datos-" + std::to_string(iter) + ".csv";  
   
   // open the file
   std::ofstream fout(fname);
