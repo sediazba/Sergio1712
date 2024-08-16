@@ -76,6 +76,7 @@ void start_time_integration(std::vector<Particle>& particles, std::map<std::stri
 void time_step(std::vector<Particle>& particles, std::map<std::string, double>& params) {
     for (auto& body : particles) {
         double new_Rz = 2 * body.Rz - body.prev_Rz + params["DT"] * params["DT"] * body.Fz / body.mass;
+        body.Vz = (new_Rz - body.prev_Rz)/(2*params["DT"]);
         body.prev_Rz = body.Rz;
         body.Rz = new_Rz;
     }
