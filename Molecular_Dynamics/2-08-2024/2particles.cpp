@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
   PARAMS["WLX"] = 0.0; // Pared izquierda, m
   PARAMS["DT"] = 0.001; // Tamaño del paso de tiempo, s
   PARAMS["T0"] = 0.0; // Tiempo inicial, s
-  PARAMS["TF"] = 4.3456; // Tiempo final, s 
+  PARAMS["TF"] = 0.9456; // Tiempo final, s 
   PARAMS["NSTEPS"] = int((PARAMS["TF"]-PARAMS["T0"])/PARAMS["DT"]); // Número de pasos
 
   // Condiciones iniciales
@@ -61,17 +61,17 @@ void initial_conditions(std::vector<Particle> & particles) {
   particles[0].mass = 1.987;
   particles[0].rad =  0.1765;
   particles[0].R[2] = 2.0;
-  particles[0].V[2] = +3.21323432;
-  particles[0].R[0] = 2.0;
+  particles[0].V[2] = 2.0;
+  particles[0].R[0] = 0.1;
   particles[0].V[0] = +1.87654;
 
   // Condiciones iniciales para la segunda partícula
-  particles[1].mass = 1.234;
-  particles[1].rad = 0.150;
-  particles[1].R[2] = 2.1;
-  particles[1].V[2] = -2.0;
-  particles[1].R[0] = 5.0;
-  particles[1].V[0] = 1.5;
+  particles[1].mass = 1.987;
+  particles[1].rad = 0.1765;
+  particles[1].R[2] = 2.0;
+  particles[1].V[2] = 2.0;
+  particles[1].R[0] = 4.9;
+  particles[1].V[0] = -1.87654;
 }
 
 void compute_forces(std::vector<Particle> &particles, std::map<std::string, double> &params) {
@@ -112,21 +112,21 @@ void compute_forces(std::vector<Particle> &particles, std::map<std::string, doub
   }
 
   // Calcular la fuerza de interacción entre las partículas
-  for (int i = 0; i < particles.size(); ++i) {
-    for (int j = i + 1; j < particles.size(); ++j) {
+  for (int ii = 0; ii < particles.size(); ii = ii + 1) {
+    for (int jj = ii + 1; jj < particles.size(); jj = jj + 1) {
       std::vector<double> Rij(3);
       double dist = 0.0;
-      for (int k = 0; k < 3; ++k) {
-        Rij[k] = particles[j].R[k] - particles[i].R[k];
+      for (int k = 0; k < 3; k = k + 1) {
+        Rij[k] = particles[jj].R[k] - particles[ii].R[k];
         dist += Rij[k] * Rij[k];
       }
       dist = sqrt(dist);
-      double delta = particles[i].rad + particles[j].rad - dist;
+      double delta = particles[ii].rad + particles[jj].rad - dist;
       if (delta >= 0) {
         for (int k = 0; k < 3; ++k) {
           double Fij = params["K"] * delta * (Rij[k] / dist);
-          particles[i].F[k] -= Fij;
-          particles[j].F[k] += Fij;
+          particles[ii].F[k] -= Fij;
+          particles[jj].F[k] += Fij;
         }
       }
     }
