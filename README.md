@@ -28,10 +28,13 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
 5. Dentro de esta carpeta encontrarás otras cuatro carpetas con los nombres de los cuatro ejemplos desarrollados para el proyecto final. Ahora sigue estos pasos en la terminal:
     a. Usando el comando "cd", navega hasta la carpeta del ejemplo que deseas ejecutar. Dentro de esta, ingresa a la carpeta "proj" y luego a la carpeta "cmake".
+
     b. Inserta el comando `cmake .`
+
     c. Inserta el comando `make`
-    d. Ya hemos compilado el programa. Para ejecutarlo, usa `./Debug/nombre_programa/nombre_programa`.  
-       Por ejemplo, si ingresaste a "Harmonic_Oscillator", ejecuta el programa con `./Debug/Harmonic_Oscillator/Harmonic_Oscillator`.
+
+    d. Ya hemos compilado el programa. Para ejecutarlo, usa `./Debug/nombre_programa/nombre_programa`.  Por ejemplo, si ingresaste a "Harmonic_Oscillator", ejecuta el programa con `./Debug/Harmonic_Oscillator/Harmonic_Oscillator`.
+    
     e. A continuación, aparecerá la ventana de OpenGL con la ejecución del programa.
 
 ## Enlace del Video
