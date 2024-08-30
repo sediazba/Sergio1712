@@ -1,4 +1,8 @@
-# Imagen Cinder
+## Modelar Sistemas Físicos con Cinder
+
+<p align="center">
+  <img src="https://libcinder.org/docs/_assets/images/cinder_logo.svg" alt="Cinder Logo" width="256" height="auto"/>
+</p>
 
 Este proyecto tiene como objetivo simular fenómenos físicos utilizando la biblioteca Cinder, asociada al lenguaje C++, para facilitar la visualización de movimientos presentes en la vida cotidiana y servir como herramienta en la construcción del pensamiento físico.
 
