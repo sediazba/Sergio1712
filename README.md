@@ -1,0 +1,33 @@
+# Imagen Cinder
+
+Este proyecto tiene como objetivo simular fenómenos físicos utilizando la biblioteca Cinder, asociada al lenguaje C++, para facilitar la visualización de movimientos presentes en la vida cotidiana y servir como herramienta en la construcción del pensamiento físico.
+
+En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondiente a uno de los ejemplos realizados (el código de cada uno estará en su respectiva carpeta "src"). Los ejemplos son:
+
+1. **Harmonic Oscillator:** Este código simula un péndulo simple, con un cable de masa despreciable y una esfera conectada a este. Es análogo a lo que se hace en dinámica molecular, pero en lugar de calcular las fuerzas sobre la partícula, nos basamos en la frecuencia y aceleración angular asociadas al péndulo simple.
+
+2. **Helicoidal:** Aquí se ejecuta un movimiento helicoidal, donde se mueve con velocidad constante sobre el eje X, mientras que en los ejes Y y Z realiza un movimiento circular. Este código está inspirado en el movimiento de una carga puntual ante la presencia de un campo magnético constante. Las ecuaciones de movimiento en cada eje son la solución al sistema mencionado. Este programa permite representar movimientos cuando tenemos las ecuaciones de movimiento para cada eje por separado, como una parametrización del movimiento, todas en función del parámetro t, que representa el tiempo.
+
+3. **Spring:** Este ejemplo muestra el movimiento de un oscilador armónico simple, similar al primer caso, pero la variación es que el movimiento se da solo en el eje horizontal, simulando una masa atada a un resorte.
+
+4. **Wall Collision:** En este código utilizamos lo aprendido en las clases del capítulo de Dinámica Molecular para modelar el movimiento de una partícula, afectada únicamente por la gravedad y las fuerzas ejercidas por las paredes. Es importante destacar que el origen de coordenadas se encuentra en la esquina superior izquierda, por lo que las expresiones para los "delta" varían. También, suponemos que las paredes son los bordes de la ventana de OpenGL que se habilita al ejecutar el programa.
+
+## Instrucciones de Compilación y Ejecución
+
+1. Descarga la biblioteca [Cinder](https://www.libcinder.org/).
+
+2. Descarga la carpeta comprimida llamada **Final_Project.zip**.
+
+3. Mueve la carpeta al directorio donde descargaste Cinder. Allí encontrarás muchas carpetas; verifica si está la carpeta "samples" para confirmar la ubicación correcta.
+
+4. Extrae los elementos de la carpeta comprimida; debería aparecer una carpeta con el mismo nombre que el archivo .zip.
+
+5. Dentro de esta carpeta encontrarás otras cuatro carpetas con los nombres de los cuatro ejemplos desarrollados para el proyecto final. Ahora sigue estos pasos en la terminal:
+    a. Usando el comando "cd", navega hasta la carpeta del ejemplo que deseas ejecutar. Dentro de esta, ingresa a la carpeta "proj" y luego a la carpeta "cmake".
+    b. Inserta el comando `cmake .`
+    c. Inserta el comando `make`
+    d. Ya hemos compilado el programa. Para ejecutarlo, usa `./Debug/nombre_programa/nombre_programa`.  
+       Por ejemplo, si ingresaste a "Harmonic_Oscillator", ejecuta el programa con `./Debug/Harmonic_Oscillator/Harmonic_Oscillator`.
+    e. A continuación, aparecerá la ventana de OpenGL con la ejecución del programa.
+
+## Enlace del Video

@@ -55,5 +55,6 @@
         "cinttypes": "cpp",
         "valarray": "cpp",
         "map": "cpp"
-    }
+    },
+    "git.ignoreLimitWarning": true
 }
