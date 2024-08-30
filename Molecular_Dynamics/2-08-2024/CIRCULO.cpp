@@ -3,11 +3,11 @@
 #include <string>
 #include <map>
 #include <fstream>
+#include <cmath>
 
 // modelar la particula
 class Particle {
-public: // visibilidad de todo lo que esta debajo mio
-  //double Rz = 0.0, Vz = 0.0, Fz = 0.0;
+public: 
   std::vector<double> R{0.0, 0.0, 0.0}, V{0.0, 0.0, 0.0}, F{0.0, 0.0, 0.0};
   double mass = 1.0, rad = 0.17;
 
@@ -29,13 +29,14 @@ int main(int argc, char *argv[]) {
   // parametros
   std::map<std::string, double> PARAMS;
   PARAMS["G"] = 9.81; // Gravity module, m/s^2
-  PARAMS["K"] = 8230.4567; // Elastic constant, N/m
+  PARAMS["K"] = 2000.4567; // Elastic constant, N/m
   PARAMS["B"] = 0.0; // Damping strength, 1/s
-  PARAMS["WRX"] = 4.9786; // Damping strength, 1/s
-  PARAMS["WLX"] = 0.0; // Damping strength, 1/s
+  PARAMS["CIRCLE_RADIUS"] = 1.0; // Radio del círculo
+  PARAMS["CIRCLE_CENTER_X"] = 1.0; // Centro del círculo en X
+  PARAMS["CIRCLE_CENTER_Z"] = 1.0; // Centro del círculo en Y
   PARAMS["DT"] = 0.001; // Time step size, s
   PARAMS["T0"] = 0.0; // Initial time, s
-  PARAMS["TF"] = 10.3456; // Final time, s 
+  PARAMS["TF"] = 2.3456; // Final time, s 
   PARAMS["NSTEPS"] = int((PARAMS["TF"]-PARAMS["T0"])/PARAMS["DT"]); // [-]
 
 
@@ -50,10 +51,9 @@ int main(int argc, char *argv[]) {
     time_step(particles, PARAMS);
     double time = PARAMS["T0"] + istep*PARAMS["DT"];
     print_gnuplot(particles, PARAMS, time);
-    //if (istep % 20 == 0) {
-      //print_paraview(particles, PARAMS, istep, time);
-    //}
+    print_paraview(particles, PARAMS, istep, time);
   }
+
   return 0;
 }
 
@@ -61,17 +61,15 @@ void initial_conditions(std::vector<Particle> & particles) {
   // condiciones iniciales
   particles[0].mass = 1.987;
   particles[0].rad =  0.1765;
-  particles[0].R[2] = 1.21323432;
-  particles[0].V[2] = +3.21323432;
-  particles[0].R[0] = 1.01323432;
-  particles[0].V[0] = +1.87654;
+  particles[0].R[0] = 1.0; // X
+  particles[0].R[2] = 1.0; // Z
+  particles[0].V[2] = +3.21323432; // Velocidad en Z
+  particles[0].V[0] = 3.0; // Velocidad en X
 }
-
 
 void compute_forces(std::vector<Particle> &particles, std::map<std::string, double> &params) {
   // reset forces
   for (auto & body : particles) {
-    //body.Fz = 0.0;
     for (int ii = 0; ii < 3; ii++) {
       body.F[ii] = 0.0;
     }
@@ -84,25 +82,16 @@ void compute_forces(std::vector<Particle> &particles, std::map<std::string, doub
   for (auto & body : particles) {
     body.F[2] -= body.mass*params["B"]*body.V[2];
   }
-  // Force against the floor
+  // Force against the circular boundary
   for (auto & body : particles) {
-    double delta = body.rad - body.R[2];
+    double dx = body.R[0] - params["CIRCLE_CENTER_X"];
+    double dz = body.R[2] - params["CIRCLE_CENTER_Z"];
+    double distance_to_center = std::sqrt(dx*dx + dz*dz);
+    double delta = distance_to_center + body.rad - params["CIRCLE_RADIUS"];
     if (delta >= 0) {
-      body.F[2] += params["K"]*delta;
-    }
-  }
-  // Force against the right wall
-  for (auto & body : particles) {
-    double delta = body.rad + body.R[0] - params["WRX"];
-    if (delta >= 0) {
-      body.F[0] -= params["K"]*delta;
-    }
-  }
-  // Force against the left wall
-  for (auto & body : particles) {
-    double delta = +body.rad - body.R[0] + params["WLX"];
-    if (delta >= 0) {
-      body.F[0] += params["K"]*delta;
+      double force_magnitude = params["K"] * delta;
+      body.F[0] -= force_magnitude * (dx / distance_to_center); //normalizar el vector de fuerza
+      body.F[2] -= force_magnitude * (dz / distance_to_center); 
     }
   }
 }
@@ -110,13 +99,11 @@ void compute_forces(std::vector<Particle> &particles, std::map<std::string, doub
 void start_time_integration(std::vector<Particle> &particles,
                             std::map<std::string, double> &params) {
   for (auto & body : particles) {
-    //body.Vz = body.Vz - 0.5*params["DT"]*body.Fz/body.mass;
     for (int ii = 0; ii < 3; ii++) {
       body.V[ii] = body.V[ii] - 0.5*params["DT"]*body.F[ii]/body.mass;
     }
   }
 }
-
 
 void time_step(std::vector<Particle> &particles,
                std::map<std::string, double> &params) {
@@ -133,48 +120,30 @@ void print_gnuplot(const std::vector<Particle> &particles,
                     std::map<std::string, double> &params, double time) {
   std::cout << time << " ";
   for (const auto & body : particles) {
-    std::cout << body.mass << " ";
-    std::cout << body.rad << " ";
-    for (int ii = 0; ii < 3; ++ii) {
-      std::cout << body.R[ii] << " ";
-    }
-    for (int ii = 0; ii < 3; ++ii) {
-      std::cout << body.V[ii] << " ";
-    }
-    for (int ii = 0; ii < 3; ++ii) {
-      std::cout << body.F[ii] << " ";
-    }
+    std::cout << body.mass << " " << body.R[0] << " " << body.R[1] << " " << body.R[2] << " " 
+              << body.V[0] << " " << body.V[1] << " " << body.V[2] << " " 
+              << body.F[0] << " " << body.F[1] << " " << body.F[2] << " ";
   }
   std::cout << "\n";
 }
-
 
 void print_paraview(const std::vector<Particle> &particles,
            std::map<std::string, double> &params, int iter, double time) {
   // creates a file per time step
   
-  // set the filename: DISPLAY/datos-{istep}.txt
-  std::string fname = "DISPLAY/datos-" + std::to_string(iter) + ".csv";  
+  // set the filename: datos-{istep}.txt
+  std::string fname = "DISPLAY/datos-" + std::to_string(iter) + ".txt";  
   
   // open the file
   std::ofstream fout(fname);
-
-  // write header
-  fout << "Rx, Ry, Rz, Vx, Vy, Vz, Fx, Fy, Fz, mass, rad\n"; 
   
   // write data
-  // fout << time << " ";
+  fout << time << " ";
   for (const auto & body : particles) {
+    fout << body.mass << " " ;
     for (int ii = 0; ii < 3; ii++) {
-      fout << body.R[ii] << ",";
+      fout << body.R[ii] << " " << body.V[ii] << " " << body.F[ii] << " ";
     }
-    for (int ii = 0; ii < 3; ii++) {
-      fout << body.V[ii] << "," ;
-    }
-    for (int ii = 0; ii < 3; ii++) {
-      fout << body.F[ii] << ",";
-    }
-    fout << body.mass << "," << body.rad << "\n";
   }
   fout << "\n";
   // close the file
