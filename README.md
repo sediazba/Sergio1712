@@ -50,8 +50,11 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
     c. Inserta el comando `make`
 
-    d. Ya hemos compilado el programa. Para ejecutarlo, usa `./Debug/nombre_programa/nombre_programa`.  Por ejemplo, si ingresaste a "Harmonic_Oscillator", ejecuta el programa con `./Debug/Harmonic_Oscillator/Harmonic_Oscillator`.
+    d. Ya hemos compilado el programa. Para ejecutarlo, usa `./Debug/nombre_programa/nombre_programa`.  
+    Por ejemplo, si ingresaste a "Harmonic_Oscillator", ejecuta el programa con `./Debug/Harmonic_Oscillator/Harmonic_Oscillator`.
 
     e. A continuación, aparecerá la ventana de OpenGL con la ejecución del programa.
 
 ## Enlace del Video
+
+**Nota: ** El enlace que encontrará a continuación corresponde a la explicación teórica de nuestro proyecto, las transformaciones en OPEN GL, los CmakeList, entre otras características importantes. La parte de programación y visualización de los códigos se hará en la clase directamente.
