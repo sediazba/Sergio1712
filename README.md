@@ -16,6 +16,10 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
 2. **Helicoidal:** Aquí se ejecuta un movimiento helicoidal, donde se mueve con velocidad constante sobre el eje X, mientras que en los ejes Y y Z realiza un movimiento circular. Este código está inspirado en el movimiento de una carga puntual ante la presencia de un campo magnético constante. Las ecuaciones de movimiento en cada eje son la solución al sistema mencionado. Este programa permite representar movimientos cuando tenemos las ecuaciones de movimiento para cada eje por separado, como una parametrización del movimiento, todas en función del parámetro t, que representa el tiempo.
 
+<p align="center">
+  <img src="https://th.bing.com/th/id/R.0fa11e3f196b8a820b0059f4a062f46c?rik=rx1ph%2f%2bbzwI5Wg&riu=http%3a%2f%2fimage.sciencenet.cn%2fhome%2f202309%2f10%2f170657iwb2nn55kq5onpqk.jpg&ehk=Xd8ZjaAWkuFs2UwRdFLx1SrYCuFmgtGnZFkA3wbz4XU%3d&risl=&pid=ImgRaw&r=0" alt="Descripción de la imagen" width="50%">
+</p>
+
 3. **Spring:** Este ejemplo muestra el movimiento de un oscilador armónico simple, similar al primer caso, pero la variación es que el movimiento se da solo en el eje horizontal, simulando una masa atada a un resorte.
 
 4. **Wall Collision:** En este código utilizamos lo aprendido en las clases del capítulo de Dinámica Molecular para modelar el movimiento de una partícula, afectada únicamente por la gravedad y las fuerzas ejercidas por las paredes. Es importante destacar que el origen de coordenadas se encuentra en la esquina superior izquierda, por lo que las expresiones para los "delta" varían. También, suponemos que las paredes son los bordes de la ventana de OpenGL que se habilita al ejecutar el programa.
