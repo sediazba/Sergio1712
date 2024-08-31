@@ -28,6 +28,10 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
 4. **Wall Collision:** En este código utilizamos lo aprendido en las clases del capítulo de Dinámica Molecular para modelar el movimiento de una partícula, afectada únicamente por la gravedad y las fuerzas ejercidas por las paredes. Es importante destacar que el origen de coordenadas se encuentra en la esquina superior izquierda, por lo que las expresiones para los "delta" varían. También, suponemos que las paredes son los bordes de la ventana de OpenGL que se habilita al ejecutar el programa.
 
+<p align="center">
+  <img src="https://th.bing.com/th/id/R.d327726ee36538a8698de27f70a408a3?rik=wKYcVLjGCexcgQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f-T23_PfNYhc0%2fUqDY3h3TvnI%2fAAAAAAAAFI0%2f39DiH9qYYdM%2fs200%2fgas-animado.gif&ehk=mLoXCnIhXNaJX2o1Wzb2kcZIUztCSAwiKTNJeDbL1og%3d&risl=&pid=ImgRaw&r=0" alt="Descripción del GIF" width="30%">
+</p>
+
 ## Instrucciones de Compilación y Ejecución
 
 1. Descarga la biblioteca [Cinder](https://www.libcinder.org/).
