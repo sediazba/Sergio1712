@@ -10,7 +10,9 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
 1. **Harmonic Oscillator:** Este código simula un péndulo simple, con un cable de masa despreciable y una esfera conectada a este. Es análogo a lo que se hace en dinámica molecular, pero en lugar de calcular las fuerzas sobre la partícula, nos basamos en la frecuencia y aceleración angular asociadas al péndulo simple.
 
-![Péndulo en movimiento](https://2.bp.blogspot.com/-jv4hhbzZhEY/WUfyp7WeHCI/AAAAAAAAFZY/BAUBcRV3KHMXUcCWVo1MxmcQTyO7al0dQCLcBGAs/s1600/pendulo.gif)
+<p align="center">
+  <img src="https://2.bp.blogspot.com/-jv4hhbzZhEY/WUfyp7WeHCI/AAAAAAAAFZY/BAUBcRV3KHMXUcCWVo1MxmcQTyO7al0dQCLcBGAs/s1600/pendulo.gif" alt="Péndulo en movimiento" width="50%">
+</p>
 
 2. **Helicoidal:** Aquí se ejecuta un movimiento helicoidal, donde se mueve con velocidad constante sobre el eje X, mientras que en los ejes Y y Z realiza un movimiento circular. Este código está inspirado en el movimiento de una carga puntual ante la presencia de un campo magnético constante. Las ecuaciones de movimiento en cada eje son la solución al sistema mencionado. Este programa permite representar movimientos cuando tenemos las ecuaciones de movimiento para cada eje por separado, como una parametrización del movimiento, todas en función del parámetro t, que representa el tiempo.
 
