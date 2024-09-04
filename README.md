@@ -70,6 +70,6 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
 Da click en la imagen para ir al vídeo.
 
-Muchas gracias.
+Muchas gracias por la atención prestada, esperamos que este proyecto haya sido del agrado de todos.
 
 GRUPO 2: Juan David Grijalba, Fredy Cruz Ospina, Sergio Andrés Díaz
