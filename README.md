@@ -64,7 +64,7 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=SVPGIGEaLTw">
-    <img src="https://img.youtube.com/vi/SVPGIGEaLTw/1.jpg" alt="Watch the video" width="600">
+    <img src="https://img.youtube.com/vi/SVPGIGEaLTw/1.jpg" alt="Watch the video" width="400">
   </a>
 </p>
 
