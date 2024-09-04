@@ -61,3 +61,11 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 ## Enlace del Video
 
 **Nota:** El enlace que encontrará a continuación corresponde a la explicación teórica de nuestro proyecto, las transformaciones en OPEN GL, los CmakeList, entre otras características importantes. La parte de programación y visualización de los códigos se hará en la clase directamente.
+
+[![Watch the video](https://img.youtube.com/vi/SVPGIGEaLTw/0.jpg)](https://www.youtube.com/watch?v=SVPGIGEaLTw)
+
+Da click en la imagen para ir al vídeo.
+
+Muchas gracias.
+
+GRUPO 2: Juan David Grijalba, Fredy Cruz Ospina, Sergio Andrés Díaz
