@@ -68,8 +68,6 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
   </a>
 </p>
 
-<p align="center">Click the image above to watch the video.</p>
-
 Da click en la imagen para ir al vídeo.
 
 Muchas gracias.
