@@ -32,19 +32,22 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
   <img src="https://th.bing.com/th/id/R.d327726ee36538a8698de27f70a408a3?rik=wKYcVLjGCexcgQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f-T23_PfNYhc0%2fUqDY3h3TvnI%2fAAAAAAAAFI0%2f39DiH9qYYdM%2fs200%2fgas-animado.gif&ehk=mLoXCnIhXNaJX2o1Wzb2kcZIUztCSAwiKTNJeDbL1og%3d&risl=&pid=ImgRaw&r=0" alt="Descripción del GIF" width="30%">
 </p>
 
+5. **Particles:** Este código es una generalización del anterior, añade fuerzas de interacción entre las partículas y nos permite ver de mejor manera lo aprendido en clase en el capítulo de Dinámica Molecular lo que abre un nuevo paradigma hacia la comprención de otro tipo de fenómenos físicos. 
+
+
 ## Instrucciones de Compilación y Ejecución
 
 1. Descarga la biblioteca [Cinder](https://www.libcinder.org/).
 
 2. Descarga la carpeta comprimida llamada **Final_Project.zip**.
 
-3. Mueve la carpeta al directorio donde descargaste Cinder. Allí encontrarás muchas carpetas; verifica si está la carpeta "samples" para confirmar la ubicación correcta.
+3. Mueva la carpeta al directorio donde descargó Cinder. Allí encontrará muchas carpetas; verifique si está la carpeta "samples" para confirmar la ubicación correcta.
 
 4. Extrae los elementos de la carpeta comprimida; debería aparecer una carpeta con el mismo nombre que el archivo .zip.
 
 5. Dentro de esta carpeta encontrarás otras cuatro carpetas con los nombres de los cuatro ejemplos desarrollados para el proyecto final. Ahora sigue estos pasos en la terminal:
 
-    a. Usando el comando "cd", navega hasta la carpeta del ejemplo que deseas ejecutar. Dentro de esta, ingresa a la carpeta "proj" y luego a la carpeta "cmake".
+    a. Usando el comando "cd", navega hasta la carpeta del ejemplo que desee ejecutar. Dentro de esta, ingresa a la carpeta "proj" y luego a la carpeta "cmake".
 
     b. Inserta el comando `cmake .`
 
