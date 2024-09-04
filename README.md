@@ -58,6 +58,8 @@ En la carpeta comprimida encontrarás cuatro directorios, cada uno correspondien
 
     e. A continuación, aparecerá la ventana de OpenGL con la ejecución del programa.
 
+    **Nota:** Es probable dependiendo del sistema operativo que se tenga que se cree dentro de Final_project otra carpeta con el mismo nombre, en ese caso, extraiga las carpetas con los nombres de los códigos de esta última carpeta, tal que, al entrar en la primera Final_project veamos directamente las carpetas con el nombre de los códigos, si desea elimine la carpeta de nombre repetido. Luego de eso, continue el proceso dado.
+
 ## Enlace del Video
 
 **Nota:** El enlace que encontrará a continuación corresponde a la explicación teórica de nuestro proyecto, las transformaciones en OPEN GL, los CmakeList, entre otras características importantes. La parte de programación y visualización de los códigos se hará en la clase directamente.
